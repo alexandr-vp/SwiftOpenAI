@@ -58,7 +58,7 @@ After that, you will see the project. The next step is to compile your project o
 
 ## ⚙️ Installation New Project
 
-Open Xcode and open the `Swift Package Manager` section, then paste the Github URL from this repository (Copy -> https://github.com/SwiftBeta/SwiftOpenAI.git) to install the Package in your project.
+Open Xcode and open the `Swift Package Manager` section, then paste the Github URL from this repository (Copy -> https://github.com/alexandr-vp/SwiftOpenAI.git) to install the Package in your project.
 
 <table>
   <tr>
