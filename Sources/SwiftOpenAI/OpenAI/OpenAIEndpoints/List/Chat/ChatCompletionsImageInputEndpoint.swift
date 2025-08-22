@@ -23,12 +23,12 @@ struct ChatCompletionsImageInputEndpoint: Endpoint {
     var parameters: [String: Any]? {
         ["model": self.model.name as Any,
          "messages": self.messages as Any,
-         "temperature": self.optionalParameters?.temperature as Any,
+         "temperature": (model.name.hasPrefix("gpt-5") ? 1 : (self.optionalParameters?.temperature as Any)),
          "top_p": self.optionalParameters?.topP as Any,
          "n": self.optionalParameters?.n as Any,
          "stop": self.optionalParameters?.stop as Any,
          "stream": self.optionalParameters?.stream as Any,
-         "max_tokens": self.optionalParameters?.maxTokens as Any]
+         (model.name.hasPrefix("gpt-5") ? "max_completion_tokens" : "max_tokens"): (model.name.hasPrefix("gpt-5") ? nil : self.optionalParameters?.maxTokens as Any)]
     }
 
     private static func mapMessageModelToDictionary(messages: [MessageChatImageInput]) -> [[String: Any]] {
