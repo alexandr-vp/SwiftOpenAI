@@ -27,7 +27,7 @@ enum OpenAIEndpoints {
                                                      messages: messages,
                                                      optionalParameters: optionalParameters)
         case .chatCompletions(let model, let messages, let optionalParameters):
-            return ChatCompletionsEndpoint(model: model,
+            return ResponsesFileInputEndpoint(model: model,
                                            messages: messages,
                                            optionalParameters: optionalParameters)
         case .createImage(model: let model, prompt: let prompt, numberOfImages: let numberOfImages, size: let size):
